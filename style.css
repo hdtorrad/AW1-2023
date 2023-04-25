@@ -1,0 +1,79 @@
+header 
+{
+    background-color: red;
+    padding: 20px;
+    text-align: center;
+    color: black
+}
+
+nav, nav *
+{
+    display: inline-block;
+}
+
+p
+{
+    border: 1px solid;
+    border-color: blue;
+    padding: 10px;
+    color: blue;
+}
+
+button
+{
+    width: 100px;
+    height: 50px;
+    margin: 10px;
+    background-color: green;
+    color: white;
+    border: none;
+    font-size: medium;
+}
+
+.container
+{
+    display: flex;
+    background-color: red;
+    
+}
+
+.item1
+{
+    flex: 1;
+    background-color: blue;
+    color: black;
+    text-align: center;
+    padding: 20px;
+    margin: 50px;
+}
+
+.item2
+{
+    flex: 2;
+    background-color: blue;
+    color: black;
+    text-align: center;
+    padding: 20px;
+    margin: 50px;
+}
+
+section
+{
+    background-color: blueviolet;
+	display: grid;
+	grid-template-columns: repeat(3, 400px);
+	grid-template-rows: repeat(3, 100px);
+    padding-left: 20px;
+}
+
+.grid-item 
+{
+    background-color: red;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
