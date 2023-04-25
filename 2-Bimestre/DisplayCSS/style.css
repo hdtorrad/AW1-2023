@@ -44,7 +44,7 @@ button
     color: black;
     text-align: center;
     padding: 20px;
-    margin: 50px;
+    margin: 20px;
 }
 
 .item2
@@ -54,16 +54,17 @@ button
     color: black;
     text-align: center;
     padding: 20px;
-    margin: 50px;
+    margin: 20px;
 }
 
 section
 {
     background-color: blueviolet;
 	display: grid;
-	grid-template-columns: repeat(3, 400px);
+	grid-template-columns: repeat(3, 500px);
 	grid-template-rows: repeat(3, 100px);
-    padding-left: 20px;
+    padding: 10px;
+    padding-bottom: 20px;
 }
 
 .grid-item 
@@ -71,8 +72,9 @@ section
     background-color: red;
     text-align: center;
     margin: 10px;
-    padding: 10px;
     width: 100%;
+    padding: 20px;
+    height: 50px;
     color: white;
     text-align: center;
 }
