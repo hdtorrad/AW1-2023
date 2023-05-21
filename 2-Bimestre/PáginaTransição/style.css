@@ -217,12 +217,34 @@ video{
     z-index: -1;
 }
 
-button{
+button {
     margin-top: 10px;
     margin-left: 5px;
     padding: 10px;
-    background-color: #c7b5a2;
+    background: radial-gradient(circle, rgba(12, 50, 245, 1) 38%, rgba(210, 23, 91, 1) 63%, rgba(245, 18, 64, 1) 100%);
     font-family: "Open Sans", sans-serif;
-    font-size: 30px;   
-    size: 30px;
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button.submit:hover {
+    background: #0cf537;
+    border: 3px solid #0bb92b;
+}
+
+button.submit:active {
+    background: #0cf537;
+    animation: alternate-reverse 2s 0.3s;
+}
+
+button.reset:hover {
+    background: #f50c0c;
+    border: 3px solid #7e0707 !important;
+}
+
+button.reset:active {
+    background: #f50c0c;
 }
