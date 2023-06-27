@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Primeiro site com JS</title>
+</head>
+<body>
+    <header>
+        <a href=""><img src="icone.png" alt="Icone de uma casinha de cachorro"></a>
+        <nav>
+            <a href="">Home</a>
+            <a href="">Sobre</a>
+            <a href="">Contatos</a>
+            <u><a href="" class="orcamento">Orçamentos</a></u>
+        </nav>
+    </header>
+    <main>
+        <h1>Orçamentos:</h1>
+        <form action="">
+            <fieldset>
+                <legend>Dados sobre o Tutor</legend>
+            
+                <label for="nomeTutor">Nome:</label>
+                <input type="text" name="nomeTutor" id="nomeTutor">
+                <br>
+                <label for="telefone">Telefone:</label>
+                <input type="number" name="telefone" id="telefone">
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Dados sobre o Pet</legend>
+
+                <label for="nomePet">Nome:</label>
+                <input type="text" name="nomePet" id="nomePet">
+                <br>
+                <label for="idade">Idade:</label>
+                <input type="number" name="idade" id="idade">
+                <br>
+                <label for="remedio">Pet faz uso de medicamento constante?</label>
+                <input type="radio" name="remedio" id="remedio" value="true">Sim
+                <input type="radio" name="remedio" id="remedio" value="false">Não
+            </fieldset>
+            <br>
+            <div>
+                <button type="submit">Enviar</button> 
+                <button type="reset">Resetar Formulário</button>
+            </div>
+        </form>
+    </main><br>
+    <footer>
+        Todos os direitos reservados
+    </footer><br><br>
+    <script>
+        var nome = prompt("Digite seu nome: ")
+        var sobrenome = prompt("Digite seu sobrenome: ")
+        var nome_completo = nome + " " + sobrenome
+        var idade = Number(prompt("Digite sua idade: "))
+        
+        /*alert("Hello World!")
+        console.log("Hello World!")
+
+        alert("Meu nome é " + nome + "\nMinha idade é " + idade)
+
+        var numero1 = Number(prompt("Digite um número: "))
+        var numero2 = Number(prompt("Digite um segundo número: "))
+        alert(numero1 + numero2)
+
+        alert(String.toString(numero1) + String.toString(numero2))
+        */
+        document.write("Seu nome é " + nome + ", você tem " + idade + " anos e seu sobrenome é " + sobrenome + "!<br>Seu nome completo:" + "<br>Maiúsculo: " + nome_completo.toUpperCase() + "<br>Minúsculo: " + nome_completo.toLowerCase() + "<br>Seu nome tem " + nome_completo.length + " letras.")
+
+        document.write(`Seu nome é ${nome}, você tem ${idade} anos e seu sobrenome é ${sobrenome}!<br>Seu nome completo maiúsculo: ${nome_completo.toUpperCase()}<br>Seu nome completo minúsculo: ${nome_completo.toLowerCase()}<br>Seu nome tem ${nome_completo.length} letras.`)
+    </script>
+</body>
+</html>
