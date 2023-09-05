@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz de JavaScript</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #3498db;
+            text-align: center;
+        }
+
+        .question {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #ecf0f1;
+            border-radius: 5px;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .option {
+            margin: 5px 0;
+        }
+
+        .submit-button {
+            background-color: #3498db;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .tag {
+            display: none;
+            margin-top: 10px;
+            padding: 5px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .correct {
+            background-color: #2ecc71;
+            color: #ffffff;
+        }
+
+        .incorrect {
+            background-color: #e74c3c;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz de JavaScript</h1>
+
+        <div class="question">
+            <p>Pergunta 1: Qual é o nome de um reptíl, um cágado(tartaruga), tem 3 anos, é macho mas tem nome de fêmea e escala as coisas:</p>
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="ingrid"> Ingrid</label>
+                <label class="option"><input type="radio" name="q1" value="cacau"> Cacau</label>
+                <label class="option"><input type="radio" name="q1" value="dobby"> Dobby</label>
+                <label class="option"><input type="radio" name="q1" value="felícia"> Felícia</label>
+            </div>
+            <button class="submit-button" id ="botao1">Enviar</button>
+            <span class="tag correct">Correto!</span>
+            <span class="tag incorrect">Incorreto.</span>
+        </div>
+
+        <!-- Repita o mesmo padrão para as próximas questões -->
+
+        <div class="question">
+            <p>Pergunta 2: Qual o nome da cachorra extrabica, possesiva com seus brinquedos, que late fazendo "u, uuu" e dorme em cima de mim?</p>
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="ingrid"> Ingrid</label>
+                <label class="option"><input type="radio" name="q2" value="cacau"> Cacau</label>
+                <label class="option"><input type="radio" name="q2" value="dobby"> Dobby</label>
+                <label class="option"><input type="radio" name="q2" value="felícia"> Felícia</label>
+            </div>
+            <button class="submit-button" id ="botao2" disabled>Enviar</button>
+            <span class="tag correct">Correto!</span>
+            <span class="tag incorrect">Incorreto.</span>
+        </div>
+
+        <!-- Repita o mesmo padrão para as próximas questões -->
+
+        <div class="question">
+            <p>Pergunta 3: Qual o nome do cachorro que é a paixão da Gina, que vive pela Gina, adora morder a Amélia, além de ser meio bipolar?</p>
+            <div class="options">
+                <label class="option"><input type="radio" name="q3" value="toy"> Toy</label>
+                <label class="option"><input type="radio" name="q3" value="rafelo"> Rafaelo</label>
+                <label class="option"><input type="radio" name="q3" value="dobby"> Dobby</label>
+                <label class="option"><input type="radio" name="q3" value="garibaldo"> Garibaldo</label>
+            </div>
+            <button class="submit-button" id ="botao3" disabled>Enviar</button>
+            <span class="tag correct">Correto!</span>
+            <span class="tag incorrect">Incorreto.</span>
+        </div>
+
+        <div class="question">
+            <p>Pergunta 4: Qual o nome do Ring Neck, passarinho, que já fugiu mas foi encontrado e devolvido depois de uma semana, perdeu a unha de uma pata,  e vira a barriga?</p>
+            <div class="options">
+                <label class="option"><input type="radio" name="q4" value="toy"> Toy</label>
+                <label class="option"><input type="radio" name="q4" value="rafelo"> Rafaelo</label>
+                <label class="option"><input type="radio" name="q4" value="dobby"> Dobby</label>
+                <label class="option"><input type="radio" name="q4" value="garibaldo"> Garibaldo</label>
+            </div>
+            <button class="submit-button" id ="botao4" disabled>Enviar</button>
+            <span class="tag correct">Correto!</span>
+            <span class="tag incorrect">Incorreto.</span>
+        </div>
+
+        <div class="question">
+            <p>Pergunta 5: Qual é o nome de um reptíl, um jabuti(tartaruga), tem 42 anos, é macho e adora laranja?</p>
+            <div class="options">
+                <label class="option"><input type="radio" name="q5" value="toy"> Toy</label>
+                <label class="option"><input type="radio" name="q5" value="rafelo"> Rafaelo</label>
+                <label class="option"><input type="radio" name="q5" value="dobby"> Dobby</label>
+                <label class="option"><input type="radio" name="q5" value="garibaldo"> Garibaldo</label>
+            </div>
+            <button class="submit-button" id ="botao5" disabled>Enviar</button>
+            <span class="tag correct">Correto!</span>
+            <span class="tag incorrect">Incorreto.</span>
+        </div>
+
+    </div>
+
+    <script>
+        document.getElementById("botao1").onclick = questao1
+        document.getElementById("botao2").onclick = questao2
+        document.getElementById("botao3").onclick = questao3
+        document.getElementById("botao4").onclick = questao4
+        document.getElementById("botao5").onclick = questao5
+
+        function checa(name,resposta){
+            const digito = name.charAt(name.length - 1);
+            const numero = Number(digito) - 1;
+            const botao = `botao${digito}`;
+            const botao_proximo = `botao${numero + 1}`;
+            var resp = document.getElementsByName(name);
+            resp.forEach(alter => {
+                if(alter.checked){
+                    if(alter.value == resposta){
+                        document.getElementsByClassName("incorrect")[numero].style.display = "none";
+                        document.getElementsByClassName("correct")[numero].style.display = "flex";
+                        document.getElementById(botao).disabled = true;
+                        document.getElementById(botao_proximo).disabled = false;
+                    }
+                    else{
+                        document.getElementsByClassName("incorrect")[numero].style.display = "flex";
+                        document.getElementsByClassName("correct")[numero].style.display = "none";
+                    }
+                }           
+            });
+        }
+
+        function questao1(){
+            checa("q1", "ingrid")
+        }
+
+        function questao2(){
+            checa("q2", "cacau")
+        }
+
+        function questao3(){
+            checa("q3", "dobby")
+        }
+
+        function questao4(){
+            checa("q4", "garibaldo")
+        }
+
+        function questao5(){
+            checa("q5", "rafelo")
+        }
+        
+    </script>
+</body>
+</html>
