@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Reposiçao de aula</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root{
+            --cor-favorita : #ff0000;
+        }
+
+        .informacoesDiv{
+            display: flex;
+            flex-direction: row;
+        }
+
+        .informacaoPrompt{
+            align-items: start;
+            justify-content: left;
+            width: 50%;
+        }
+
+        h1{
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--cor-favorita);
+        }
+
+        table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        tr{
+           border-bottom: 1px solid rgb(216, 215, 215);
+        }
+        th{
+            text-align: left;
+            border-bottom: none;
+            background-color: var(--cor-favorita);
+            color: white;
+            padding: 5px;
+        }
+        .disciplina{
+            column-span: 2;
+        }
+        td{
+            justify-content: left;
+            align-items: start;
+            padding: 5px;
+        }
+        .gridd {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            justify-content: center;
+            align-items: center;
+            border: 1px solid black;
+            margin-top: 10000px;
+            width: 200px;
+            margin: 0 auto; /* Centraliza horizontalmente */
+        }
+
+        .elemento{
+            border: 1px solid black;
+            display: flex;
+            align-items: center; 
+            justify-content: center; 
+            
+        }
+    </style>
+    
+</head>
+<body>
+    <header>
+        <div class="informacoesDiv">
+            <div class="informacaoPrompt">
+                <h1>Nome:</h1>
+                <p id="nome">Exemplo</p>
+            </div>
+            <div class="informacaoPrompt">
+                <h1>Idade:</h1>
+                <p id="idade">Exemplo</p>
+            </div>
+        </div><br><br>
+        <div class="informacoesDiv">
+            <div class="informacaoPrompt">
+                <h1>Em você terá:</h1>
+                <p id="idadeFutura">Exemplo</p>
+            </div>
+        </div>    
+    </header><br><br>
+    <main>
+        <table>
+            <tr>
+                <th>
+                    Disciplina
+                </th>
+                <th>
+                    Nota
+                </th>
+            </tr>
+            <tr>
+                <td class="disciplina">Português</td>
+                <td id="port"></td>
+            </tr>
+            <tr>
+                <td class="disciplina">Matemática</td>
+                <td id="mat"></td>
+            </tr>
+            <tr>
+                <td class="disciplina">Desenvolvimento Web</td>
+                <td id="AW1"></td>
+            </tr>
+            <tr>
+                <td class="disciplina">Média Geral</td>
+                <td id="mediaGeral"></td>
+            </tr>
+        </table>
+        <footer><br><br><br>
+            <div class="gridd">
+                <div class="elemento">1</div>
+                <div class="elemento">2</div>
+                <div class="elemento">3</div>
+                <div class="elemento">4</div>
+                <div class="elemento">5</div>
+                <div class="elemento">6</div>
+                <div class="elemento">7</div>
+                <div class="elemento">8</div>
+                <div class="elemento">9</div>
+            </div>
+        </footer>
+    </main>
+    <script>
+        class Pessoa {
+            constructor() {
+                this.nome = prompt("Digite seu nome:");
+                this.idade = parseInt(prompt("Digite sua idade:"));
+                this.port = parseFloat(prompt("Digite sua nota de português:"));
+                this.mat = parseFloat(prompt("Digite sua nota de matemática:"));
+                this.AW1 = parseFloat(prompt("Digite sua nota de Desenvolvimento Web:"));
+            }
+
+            calcularMedia() {
+                return (this.port + this.mat + this.AW1) / 3;
+            }
+
+            calcularIdade(ano) {
+                return (ano - 2023) + this.idade;
+            }
+
+            get nomePessoa() {
+                return this.nome;
+            }
+            get idadePessoa() {
+                return this.idade;
+            }
+            get portugues() {
+                return this.port;
+            }
+            get matematica() {
+                return this.mat;
+            }
+            get desenvolvimentoWeb() {
+                return this.AW1;
+            }
+        }
+
+        // Criar um objeto
+        const user = new Pessoa();
+
+        // Definir a cor favorita
+        const corFavorita = prompt("Digite sua cor favorita:");
+        document.documentElement.style.setProperty('--cor-favorita', corFavorita);
+
+        // Atribuir valores:
+        const Tag_nome = document.getElementById("nome");
+        const Tag_idade = document.getElementById("idade");
+        const Tag_idadeFutura = document.getElementById("idadeFutura");
+        const Tag_portugues = document.getElementById("port");
+        const Tag_matematica = document.getElementById("mat");
+        const Tag_desenvolvimentoWeb = document.getElementById("AW1");
+        const Tag_mediaGeral = document.getElementById("mediaGeral");
+
+        Tag_nome.innerHTML = user.nomePessoa;
+        Tag_idade.innerHTML = user.idadePessoa;
+        const ano = prompt("Digite um ano:");
+        Tag_idadeFutura.innerHTML = user.calcularIdade(Number(ano));
+        Tag_portugues.innerHTML = user.portugues;
+        Tag_matematica.innerHTML = user.matematica;
+        Tag_desenvolvimentoWeb.innerHTML = user.desenvolvimentoWeb;
+        Tag_mediaGeral.innerHTML = user.calcularMedia().toFixed(2);
+
+        let numeros = prompt("Digite 9 números separados por espaços:").split(" ");
+
+        numeros.forEach((numero, index) => {
+            document.getElementsByClassName("elemento")[index].innerHTML = numero;
+        });
+    </script>
+</body>
+</html>
